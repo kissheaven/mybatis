@@ -1,3 +1,3 @@
-# mybatis
+# mybatis + Spring
 
-一个单纯的mybatis 项目
+一个单纯的mybatis + Spring项目
