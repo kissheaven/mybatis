@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.how2java.pojo.Category;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -28,6 +29,16 @@ public class TestMybatis {
         List<Product> ps2 = session.selectList("listProductCondition",params);
         for (Product p : ps2) {
             System.out.println(p);
+        }
+
+        System.out.println("一对多查询");
+        List<Category> cs = session.selectList("listCategory");
+        for (Category c : cs) {
+            System.out.println(c);
+            List<Product> ps = c.getProducts();
+            for (Product p : ps) {
+                System.out.println("\t"+p);
+            }
         }
 
         session.commit();

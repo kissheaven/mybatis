@@ -9,7 +9,7 @@
         <result column="price" property="price" />
 
         <!-- 多对一的关系 -->
-        <!-- property: 指的是属性名称, javaType：指的是属性的类型 -->
+        <!-- property: 指的是属性名称, javaType：指的是属性的类型   -->
         <association property="category" javaType="Category">
             <id column="cid" property="id"/>
             <result column="cname" property="name"/>
